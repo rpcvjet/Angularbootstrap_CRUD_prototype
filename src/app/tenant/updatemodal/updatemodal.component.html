@@ -1,0 +1,75 @@
+<div class="backdrop" #childModal [ngStyle]="{'display':display}" id="edit"></div>
+
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="closeEditModal()"><span aria-hidden="true">&times;</span></button>
+        <div class="panel-heading">
+            <h3 class="panel-title">Edit Employee</h3>
+          </div>
+      </div>
+
+      <form [formGroup]="editForm" class="form-horizontal" >
+        <!-- Title -->
+          <div class="form-group">
+              <label class="col-md-2 control-label">Title</label>
+              <div class="col-md-8">
+                  <label class="radio-inline">
+                  <input id="title" type="radio"  value="Mr" formControlName="title">Mr</label>
+                  <label class="radio-inline">
+                      <input id="title" type="radio" value="Ms" formControlName="title">Ms</label>
+              </div>
+          </div>
+
+          <!-- Name Input -->
+          <div class="form-group">
+              <label class="col-sm-2 control-label" for="name"  >Full Name</label>
+
+              <div class="col-sm-8">
+                <input id="name" type="text"   class="form-control" formControlName="name" value="{{tenant.name}}">
+              </div>
+          </div>
+
+          <!-- European -->
+          <div class="form-group">
+              <label class="col-md-2 control-label">European?</label>
+              <div class="col-md-8">
+                  <label class="radio-inline">
+                  <input id="european" type="radio" value="Yes" formControlName="european">Yes</label>
+                  <label class="radio-inline">
+                      <input id="european" type="radio" value="No" formControlName="european">No</label>
+              </div>
+          </div>
+
+
+          <!-- House -->
+          <div class="form-group">
+              <label class="col-md-2 control-label">House</label>
+              <div class="col-md-8">
+                  <!-- <input id="house" type="select" value="option" formControlName="house"> -->
+
+                  <select id="house" formControlName="house">
+                    <option>Lannister</option>
+                    <option>Stark</option>
+                    <option>Baratheon</option>
+                    <option>GreyJoy</option>
+                    <option>Tarth</option>
+                    <option>Tygareon</option>
+                  </select>
+                  </div>
+            </div>
+      </form>
+
+
+      <!-- FOOTER -->
+      <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" (click)="updateTenant($event)">Submit</button>
+        <button type="button" class="btn btn-default" (click)="closeEditModal()">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

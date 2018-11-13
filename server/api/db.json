@@ -1,0 +1,60 @@
+{
+  "tenants": [
+    {
+      "id": 1,
+      "title": "Mr",
+      "name": "John Snow",
+      "european": "Yes",
+      "house": "Stark"
+    },
+    {
+      "id": 2,
+      "title": "Ms",
+      "name": "Cercei Lannister",
+      "european": "No",
+      "house": "Lannister"
+    },
+    {
+      "id": 3,
+      "title": "Mr",
+      "name": "Robert Barathon",
+      "european": "No",
+      "house": "Barathon"
+    },
+    {
+      "id": 4,
+      "title": "Mr",
+      "name": "Theon Greyjoy",
+      "european": "Yes",
+      "house": "GreyJoy"
+    },
+    {
+      "title": "Mr",
+      "name": "Ken Edwards",
+      "european": "No",
+      "house": "Tarth",
+      "id": 7
+    },
+    {
+      "title": "Mr",
+      "name": "Jofrey Lannister",
+      "european": "Yes",
+      "house": "Stark",
+      "id": 8
+    },
+    {
+      "title": "Mr",
+      "name": "Lord Tyrelle",
+      "european": "Yes",
+      "house": "Stark",
+      "id": 13
+    },
+    {
+      "title": "Ms",
+      "name": "Lyanna Stark",
+      "european": "No",
+      "house": "Stark",
+      "id": 14
+    }
+  ]
+}

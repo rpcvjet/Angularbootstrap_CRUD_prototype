@@ -1,0 +1,29 @@
+<app-updatemodal ></app-updatemodal>
+<h2>Tenants</h2>
+<table class="table table-bordered table-hover" id="table" style="width:100%">
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Name</th>
+        <th>European</th>
+        <th>House</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tenant of tenants; let id = index">
+        <td>{{tenant.title}}</td>
+        <td>{{tenant.name}}</td>
+        <td>{{tenant.european}}</td>
+        <td>{{tenant.house}}</td>
+        <td><button (click)="openModal()" type="button" class="btn btn-default btn-sm" >
+            <span class="glyphicon glyphicon-remove"></span> Edit
+          </button></td>
+
+        <button (click)="deleted.emit(tenant); $event.stopImmediatePropagation();" type="button" class="btn btn-default btn-sm" >
+          <span class="glyphicon glyphicon-remove"></span> Remove
+        </button>
+    </tr>
+  </tbody>
+</table>
