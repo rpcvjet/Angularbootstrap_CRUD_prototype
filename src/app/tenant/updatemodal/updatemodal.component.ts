@@ -12,21 +12,33 @@ export class UpdatemodalComponent implements OnInit {
   editForm: FormGroup;
   display = 'none';
   selectedTenant: Tenant;
-  @Output() openClicked = new EventEmitter();
+  @Input() tenants: Tenant;
 
-  constructor(public tenantService: TenantService, private fb: FormBuilder) { }
+  constructor(public tenantService: TenantService, private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.editForm = this.fb.group({
-      title: [''],
-      name: [''],
-      european: [''],
-      house: ['']
-    });
+    this.createForm();
   }
 
-  OpenEditModal() {
-    console.log('i am here');
+
+  createForm() {
+    this.editForm = this.fb.group({
+      title: '',
+      name: '',
+      european: '',
+      house: ''
+    });
+
+  }
+
+  OpenEditModal(tenants) {
+    console.log('updatemodal--->', tenants);
+    this.editForm.patchValue({
+      title: tenants.title,
+      name: tenants.name,
+      european: tenants.european,
+      house: tenants.house
+    });
 
     this.display = 'block';
     }
